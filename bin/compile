@@ -16,7 +16,7 @@ echo '-----> nginx-buildpack: Default mime.types copied to app/config/'
 
 if [[ ! -f $1/config/nginx.conf.erb ]]; then
 	cp config/nginx.conf.erb "$1/config/"
-	echo '-----> nginx-buildpack: Default config copied to app/config.'
+	echo '-----> nginx-buildpack: CollegeMojo Default config copied to app/config.'
 else
 	echo '-----> nginx-buildpack: Custom config found in app/config.'
 fi
