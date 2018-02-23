@@ -30,15 +30,6 @@ http {
 		server unix:/tmp/nginx.socket fail_timeout=0;
  	}
 
-  server {
-		listen 80;
-		server_name test-homer.collegemojo.com;
-
-		# Always redirect to https
-		redirect 301 https://test-homer.collegemojo.com;
-	}
-
-
 	server {
 		listen <%= ENV["PORT"] %>;
 		server_name test-homer.collegemojo.com;
