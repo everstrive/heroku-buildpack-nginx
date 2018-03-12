@@ -42,4 +42,14 @@ http {
 			proxy_pass http://test-homer.collegemojo.com;
 		}
 	}
+	
+	server {
+		listen 80;
+		listen [::]:80;
+		
+		server_name test-homer.collegemojo.com;
+		
+		return 301 https://test-homer.collegemojo.com$request_uri;
+	
+	}
 }
