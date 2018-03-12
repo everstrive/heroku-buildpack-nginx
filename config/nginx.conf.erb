@@ -29,6 +29,16 @@ http {
 	upstream app_server {
 		server unix:/tmp/nginx.socket fail_timeout=0;
  	}
+	
+	server {
+		listen 80;
+		listen [::]:80;
+		
+		server_name test-homer.collegemojo.com;
+		
+		return 301 https://test-homer.collegemojo.com$request_uri;
+	
+	}
 
 	server {
 		listen <%= ENV["PORT"] %>;
@@ -43,13 +53,4 @@ http {
 		}
 	}
 	
-	server {
-		listen 80;
-		listen [::]:80;
-		
-		server_name test-homer.collegemojo.com;
-		
-		return 301 https://test-homer.collegemojo.com$request_uri;
-	
-	}
 }
